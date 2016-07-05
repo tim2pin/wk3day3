@@ -9,6 +9,18 @@
 // var robby = Robot.new();
 
 
-function Robot(robotName){
-  this.robotName = robotName
+function Robot(){
 }
+Robot.new = function(){   //factory function (return new instance of an object)
+  return new Robot();
+};
+//future instances of var name = new Robot(); instance factory function
+Robot.prototype.new = function(){
+   return new Robot();
+};
+
+var robby = Robot.new();
+console.log(robby.new());
+var cornRobo= Robot.new();
+console.log(cornRobo.new());
+
